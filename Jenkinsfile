@@ -11,13 +11,13 @@ pipeline {
         
         stage('building docker image') {
             steps {
-                sh 'docker build . node-app:$BUILD_TAG'
+                sh 'docker build -f dockerfile . -t node-app:$BUILD_TAG'
             }
         }
      stage('push image to dockerhub') {
             steps {
-                sh 'doker tag node-app:$BUILD_TAG yossef/node-app:$BUILD_TAG'
-                sh 'docker run -d -p 4000:3000 yousef/node-app:$BIULD_TAG'
+                //sh 'doker tag node-app:$BUILD_TAG yossef/node-app:$BUILD_TAG'
+                sh 'docker run -d -p 4000:3000 node-app:$BIULD_TAG'
             }
         }
     }
