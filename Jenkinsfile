@@ -17,7 +17,7 @@ pipeline {
      stage('push image to dockerhub') {
             steps {
                 //sh 'doker tag node-app:$BUILD_TAG yossef/node-app:$BUILD_TAG'
-                sh 'docker run -d -p 4000:3000 node-app:$BIULD_TAG'
+                sh 'docker run -d -p 4000:3000 node-app:$BUILD_TAG'
             }
         }
     }
