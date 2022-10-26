@@ -1,8 +1,8 @@
 pipeline {
     agent {label 'agent1'}
-    environment {
-       dockerhub_cred = credentials('dockerhub')
-    }
+    // environment {
+    //    dockerhub_cred = credentials('dockerhub')
+    // }
     stages {
         stage('building docker image') {
             steps {
