@@ -25,6 +25,13 @@ pipeline {
         stage('building docker image') {
             steps {
                 sh 'docker build -f dockerfile . -t yossefsameh/node-app:$BUILD_TAG'
+
+            }
+        }       
+   
+        stage('building docker image') {
+            steps {
+                sh 'docker build -f dockerfile . -t yossefsameh/node-app:$BUILD_TAG'
             }
         }
      stage('push image to dockerhub') {
