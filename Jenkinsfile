@@ -4,9 +4,17 @@ pipeline {
 
         git "Default"
     }
+    
     stages {
 
-        
+        stage('Preperation') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/yossefsameh/jenkins-and-docker.git'
+
+            }
+        }
+
         stage('building docker image') {
             steps {
                 sh 'docker build -f dockerfile . -t yossefsameh/node-app:$BUILD_TAG'
