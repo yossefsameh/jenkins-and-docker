@@ -10,7 +10,8 @@ pipeline {
         stage('Preperation') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/yossefsameh/jenkins-and-docker.git'
+                //git 'https://github.com/yossefsameh/jenkins-and-docker.git'
+                git 'https://github.com/Ahmed-Ali-Elbaz/jenkins_nodejs_example.git'
 
             }
         }
