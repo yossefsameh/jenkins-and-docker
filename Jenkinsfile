@@ -14,7 +14,14 @@ pipeline {
 
         //     }
         // }
+         stage('Print Branch name') {
+            steps {
+                    
+                 echo "${env.GIT_BRANCH}"
 
+            }
+        }       
+   
         stage('building docker image') {
             steps {
                 sh 'docker build -f dockerfile . -t yossefsameh/node-app:$BUILD_TAG'
