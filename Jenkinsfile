@@ -1,13 +1,11 @@
 pipeline {
-    agent {label 'agent1'}
+    agent {label 'instance'}
+    tools {
 
+        git "Default"
+    }
     stages {
 
-        // stage('Git') {
-        //     steps {
-        //         git 'https://github.com/yossefsameh/jenkins-and-docker.git'
-        //     }
-        // }
         
         stage('building docker image') {
             steps {
