@@ -14,13 +14,13 @@ pipeline {
 
         //     }
         // }
-         stage('Print Branch name') {
-            steps {
+        //  stage('Print Branch name') {
+        //     steps {
                     
-                 echo "${env.GIT_BRANCH}"
+        //          echo "${env.GIT_BRANCH}"
 
-            }
-        }       
+        //     }
+        // }       
    
         stage('building docker image') {
             steps {
@@ -29,12 +29,7 @@ pipeline {
             }
         }       
    
-        stage('building docker image') {
-            steps {
-                sh 'docker build -f dockerfile . -t yossefsameh/node-app:$BUILD_TAG'
-            }
-        }
-     stage('push image to dockerhub') {
+     stage('run container') {
             steps {
                 //sh 'doker tag node-app:$BUILD_TAG yossef/node-app:$BUILD_TAG'
                 sh 'docker run -d -p 4001:3000 yossefsameh/node-app:$BUILD_TAG'
